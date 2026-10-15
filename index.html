@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- VISTA PREVIA AL COMPARTIR (WhatsApp, Facebook, X).
+     Cuando tenga la dirección de GitHub Pages, reemplace las 2 apariciones de
+     https://dirqmez.github.io/ojoamonserrate/ por la dirección real. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Monserrate también es su gente">
+<meta property="og:description" content="Más de 70 familias del sendero a Monserrate llevan más de dos meses sin poder trabajar. Conoce el caso y compártelo.">
+<meta property="og:image" content="https://dirqmez.github.io/ojoamonserrate/img/planton-1ago.jpg">
+<meta property="og:url" content="https://dirqmez.github.io/ojoamonserrate/">
+<meta name="twitter:card" content="summary_large_image">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>Monserrate es su gente</title>
+<meta name="description" content="Más de 70 familias del sendero a Monserrate llevan más de dos meses sin poder trabajar. Conoce el caso y compártelo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@400;600;800&family=Permanent+Marker&display=swap">
+<style>
+/* Layout: one mobile-first column read from a QR scan — photo hero, cifras, qué pasó, exigencias, compartir. Cartón + tinta roja de pancarta + verde de los cerros. */
+:root {
+  --bg: #f3efe6;          /* cartón claro */
+  --surface: #fffdf8;
+  --ink: #1d221c;
+  --muted: #5b6157;
+  --line: #d9d3c4;
+  --cerro: #1f4a33;       /* verde de los cerros orientales */
+  --cerro-ink: #f3efe6;
+  --sign: #c8261d;        /* rojo de pancarta */
+  --sign-soft: #f6dcd8;
+  --wa: #1d8a4c;
+  --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Permanent Marker", "Comic Sans MS", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141814; --surface: #1c221d; --ink: #ece8de; --muted: #a8ada1;
+    --line: #333b34; --cerro: #2c6447; --cerro-ink: #f3efe6;
+    --sign: #ef5a4c; --sign-soft: #3a1f1c; --wa: #2fae66; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141814; --surface: #1c221d; --ink: #ece8de; --muted: #a8ada1;
+  --line: #333b34; --cerro: #2c6447; --cerro-ink: #f3efe6;
+  --sign: #ef5a4c; --sign-soft: #3a1f1c; --wa: #2fae66; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.55; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--sign); outline-offset: 2px; }
+.wrap { max-width: 720px; margin: 0 auto; padding-inline: 18px; }
+section { padding-block: 40px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 7vw, 42px); line-height: 1.05; letter-spacing: .01em; text-transform: uppercase; margin: 0 0 18px; text-wrap: balance; }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--sign); margin: 0 0 8px; }
+p { margin: 0 0 14px; max-width: 64ch; }
+
+/* Hero */
+.hero { position: relative; color: #fff; background: #10170f; overflow: hidden; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+.hero .wrap { position: relative; padding-block: 56px 36px; display: grid; gap: 14px; }
+.hero h1 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 12vw, 84px); line-height: .95; margin: 0; text-wrap: balance; text-shadow: 0 2px 18px rgba(0,0,0,.45); }
+.hero h1 span { color: #ffd23f; }
+.hero .lede { font-size: 18px; max-width: 34ch; text-shadow: 0 1px 10px rgba(0,0,0,.6); margin: 0; }
+.hero .tag { justify-self: start; background: var(--sign); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 6px 10px; border-radius: 3px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 0; font: 800 16px var(--font-body); text-decoration: none; cursor: pointer; }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-ghost { background: rgba(255,255,255,.14); color: #fff; border: 1.5px solid rgba(255,255,255,.6); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* Cifras */
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2px; background: var(--line); border: 2px solid var(--line); border-radius: 6px; overflow: hidden; }
+.stat { background: var(--surface); padding: 16px 14px; }
+.stat b { display: block; font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 11vw, 56px); line-height: 1; color: var(--sign); font-variant-numeric: tabular-nums; }
+.stat span { display: block; font-size: 14px; color: var(--muted); margin-top: 6px; line-height: 1.35; }
+
+/* Pancarta */
+.sign { background: var(--surface); border: 2px solid var(--ink); padding: 22px 18px; transform: rotate(-1.2deg); box-shadow: 6px 6px 0 var(--cerro); margin: 6px 4px 0; }
+.sign p { font-family: var(--font-hand); color: var(--sign); font-size: clamp(22px, 6vw, 30px); line-height: 1.2; margin: 0; max-width: none; }
+
+/* Línea de tiempo */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 92px minmax(0,1fr); gap: 14px; padding-block: 14px; border-top: 1px solid var(--line); }
+.timeline li:first-child { border-top: 0; }
+.timeline time { font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--cerro); line-height: 1.3; padding-top: 3px; }
+:root[data-theme="dark"] .timeline time { color: #7fc39b; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .timeline time { color: #7fc39b; } }
+.timeline h3 { font-size: 17px; margin: 0 0 4px; line-height: 1.3; }
+.timeline p { margin: 0; font-size: 15.5px; color: var(--muted); }
+.timeline .hot time { color: var(--sign); }
+
+figure { margin: 0; }
+figure img { width: 100%; border-radius: 4px; display: block; }
+figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.photos { display: grid; gap: 18px; margin-top: 22px; }
+
+/* Exigencias */
+.band { background: var(--cerro); color: var(--cerro-ink); }
+.band .eyebrow { color: #ffd23f; }
+.demands { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; counter-reset: d; }
+.demands li { counter-increment: d; display: grid; grid-template-columns: 34px minmax(0,1fr); gap: 12px; align-items: start; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 6px; padding: 14px; }
+.demands li::before { content: counter(d); font-family: var(--font-display); font-size: 26px; line-height: 1; color: #ffd23f; }
+.demands b { display: block; }
+.demands span { font-size: 15px; opacity: .88; }
+
+.callout { border-left: 5px solid var(--sign); background: var(--sign-soft); padding: 16px 18px; border-radius: 0 6px 6px 0; }
+.callout p:last-child { margin: 0; }
+
+/* Compartir */
+.share-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.share-grid .btn { border-radius: 8px; width: 100%; }
+.s-wa { background: var(--wa); color: #fff; grid-column: 1 / -1; min-height: 56px; font-size: 17px; }
+.s-x { background: var(--ink); color: var(--bg); }
+.s-fb { background: #1f5bc4; color: #fff; }
+.s-tg { background: #2a8bc9; color: #fff; }
+.s-copy { background: var(--surface); color: var(--ink); border: 2px solid var(--ink); }
+.msgbox { margin-top: 18px; background: var(--surface); border: 1px dashed var(--muted); border-radius: 6px; padding: 14px; }
+.msgbox textarea { width: 100%; min-height: 170px; border: 0; background: transparent; color: var(--ink); font: 15px/1.5 var(--font-body); resize: vertical; }
+.msgbox .btn { min-height: 40px; font-size: 14px; background: var(--ink); color: var(--bg); }
+.toast { font-size: 14px; font-weight: 600; color: var(--wa); min-height: 1.4em; margin-top: 8px; }
+
+.links { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.links a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; text-decoration: none; font-weight: 600; }
+.links a small { color: var(--muted); font-weight: 400; display: block; font-size: 13px; }
+.links a::after { content: "↗"; color: var(--sign); font-weight: 800; }
+
+.vids { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.vid { display: grid; text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.thumb { position: relative; aspect-ratio: 4 / 5; max-width: 100%; background: #10170f center / cover no-repeat; display: grid; place-items: center; }
+.thumb::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.45)); }
+.thumb i { position: relative; width: 64px; height: 64px; border-radius: 50%; background: var(--sign); color: #fff; display: grid; place-items: center; font-style: normal; font-size: 24px; padding-left: 4px; box-shadow: 0 4px 18px rgba(0,0,0,.35); }
+.vmeta { padding: 12px 14px; }
+.vmeta b { display: block; line-height: 1.3; }
+.vmeta small { color: var(--muted); font-size: 13px; }
+.qr-card { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 18px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; margin-top: 22px; }
+#qr { background: #fff; padding: 10px; border-radius: 4px; line-height: 0; }
+#qr img, #qr canvas { width: 132px !important; height: 132px !important; }
+.qr-card p { font-size: 15px; margin: 0; }
+@media (max-width: 420px) { .qr-card { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+
+.convoca { text-align: left; }
+.convoca .org { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(26px, 6.5vw, 36px); line-height: 1.05; margin: 4px 0 10px; color: var(--cerro); }
+:root[data-theme="dark"] .convoca .org { color: #7fc39b; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .convoca .org { color: #7fc39b; } }
+.allies { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ally { display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 14px; align-items: center; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+.ally .logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; font: 800 15px var(--font-body); color: var(--cerro); }
+.ally .logo img { width: 100%; height: 100%; object-fit: cover; }
+.ally b { display: block; line-height: 1.3; font-size: 15.5px; }
+.ally small { color: var(--muted); font-size: 13px; }
+.ally .nets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.ally .nets a { font-size: 13px; font-weight: 700; text-decoration: none; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); }
+.ally .nets a:hover { border-color: var(--sign); color: var(--sign); }
+footer { border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); padding-block: 22px 40px; }
+
+/* Barra fija de compartir en móvil */
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-top: 1px solid var(--line); display: flex; gap: 8px; z-index: 5; }
+.sticky .btn { flex: 1; min-height: 46px; font-size: 15px; }
+.sticky .s-copy { flex: 0 0 auto; }
+body { padding-bottom: 76px; }
+@media (min-width: 760px) { .sticky { display: none; } body { padding-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) { .sign { transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="img/planton-1ago.webp" alt="Vendedoras y vendedores del sendero a Monserrate con pancartas: 'Somos vendedores, no delincuentes' y 'Derecho al trabajo'.">
+  <div class="wrap">
+    <span class="tag">Sendero a Monserrate · Bogotá</span>
+    <h1>Monserrate también es <span>su gente</span></h1>
+    <p class="lede">Más de 70 familias que por décadas han trabajado en el sendero llevan más de dos meses sin poder hacerlo. Conoce el caso en 2 minutos y compártelo.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        Compartir por WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#que-paso">Qué pasó</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap" aria-labelledby="cifras">
+    <p class="eyebrow">El caso en cifras</p>
+    <h2 id="cifras">Sin trabajo y sin alternativa</h2>
+    <div class="stats">
+      <div class="stat"><b>33</b><span>establecimientos sellados desde finales de julio de 2026</span></div>
+      <div class="stat"><b>+70</b><span>familias sin sustento. La caracterización oficial solo contó 33 locales</span></div>
+      <div class="stat"><b>+2</b><span>meses sin ingresos y sin una salida concreta</span></div>
+      <div class="stat"><b>2002</b><span>año de la conciliación con el Distrito que permitía seguir trabajando</span></div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-block-start: 0">
+    <div class="sign"><p>¡La protección ambiental no puede hacerse a costa de la dignidad de las familias trabajadoras!</p></div>
+  </section>
+
+  <section class="wrap" id="que-paso" aria-labelledby="h-paso">
+    <p class="eyebrow">Qué pasó</p>
+    <h2 id="h-paso">De un acuerdo con el Distrito a los sellos</h2>
+    <ol class="timeline">
+      <li><time>2002</time><div><h3>Conciliación con el Distrito</h3><p>Distrito y habitantes del sector firmaron una conciliación extrajudicial: se acordó eliminar el uso habitacional y permitir la continuidad de ciertas actividades económicas.</p></div></li>
+      <li><time>Mar 2026</time><div><h3>Resolución de la CAR</h3><p>A solicitud del IDRD, administrador del sendero, la CAR abrió una indagación preliminar, identificó 33 establecimientos y ordenó una medida preventiva. Esa caracterización se quedó corta: en el sendero trabajan más de 70 familias.</p></div></li>
+      <li class="hot"><time>Fin de jul 2026</time><div><h3>Cierre y sellamiento</h3><p>La Alcaldía Local de Santa Fe ejecutó la medida. Los locales quedaron sellados sin que las entidades les explicaran qué requisitos ambientales debían cumplir ni les dieran la oportunidad de negociar condiciones para permanecer en el sendero.</p></div></li>
+      <li><time>1 ago 2026</time><div><h3>Plantón en el sendero</h3><p>Vendedores y vendedoras se manifestaron: «Somos vendedores, no delincuentes», «Derecho al trabajo».</p></div></li>
+      <li><time>Ago – oct</time><div><h3>Mesas de trabajo y tutela</h3><p>Mesas con la CAR, el IDRD y otras entidades, con el acompañamiento de la Asociación de Pobladores Candelaria Vida Mía, la Coordinadora de Procesos y Barrios Populares del Borde Oriental y la concejala de Bogotá Heidy Sánchez Barreto. Se abrió la posibilidad de un Plan de Recreación Pasiva, pero sin cronograma. Una tutela fue negada en primera instancia; sigue el trámite administrativo ambiental.</p></div></li>
+      <li class="hot"><time>11 oct 2026</time><div><h3>Suben de nuevo a trabajar</h3><p>Sin ingresos ni respuestas, comerciantes subieron temprano al sendero. Hubo diálogo con la Policía Nacional.</p></div></li>
+      <li><time>Oct 2026</time><div><h3>Constancia en el Congreso</h3><p>El representante Gabriel Becerra dejó constancia en la Comisión Primera de la Cámara y pidió a la CAR, el IDRD y la Alcaldía una salida concertada.</p></div></li>
+    </ol>
+    <div class="photos">
+      <figure>
+        <img src="img/dialogo-policia-11oct.webp" alt="Comerciantes en diálogo con agentes de la Policía Nacional junto a un local del sendero." loading="lazy">
+        <figcaption>Domingo 11 de octubre de 2026: comerciantes en diálogo con la Policía Nacional.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/santuario.webp" alt="Santuario de Monserrate con miles de visitantes, sobre la ciudad de Bogotá." loading="lazy">
+        <figcaption>Monserrate recibe a miles de visitantes. Quienes los atienden en el sendero hoy no pueden trabajar.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-piden">
+    <div class="wrap">
+      <p class="eyebrow">Lo que piden las familias</p>
+      <h2 id="h-piden">Seis exigencias concretas</h2>
+      <ol class="demands">
+        <li><div><b>Respeto al derecho al trabajo e información clara</b><span>Que les digan con claridad qué requisitos ambientales deben cumplir para trabajar sin problemas. Las entidades simplemente sellaron los locales, sin darles la oportunidad de negociar las condiciones para permanecer en el sendero.</span></div></li>
+        <li><div><b>Levantar la medida de cierre</b><span>Que puedan volver a trabajar.</span></div></li>
+        <li><div><b>Reconocer los acuerdos previos</b><span>Empezando por la conciliación de 2002 con el Distrito.</span></div></li>
+        <li><div><b>Participar en el Plan de Recreación Pasiva</b><span>El IDRD debe liderarlo con la comunidad, con un cronograma claro.</span></div></li>
+        <li><div><b>Reglas de manejo ambiental</b><span>Condiciones que hagan compatible el trabajo con la protección de la reserva.</span></div></li>
+        <li><div><b>Atención inmediata</b><span>Alternativas económicas mientras se resuelve el caso.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="h-cerros">
+    <p class="eyebrow">Sí a los Cerros Orientales</p>
+    <h2 id="h-cerros">Proteger la reserva y a las familias</h2>
+    <div class="callout">
+      <p>La comunidad no desconoce la importancia de proteger la Reserva Forestal Protectora Bosque Oriental de Bogotá. Pide que esa protección no deje sin sustento a decenas de familias sin alternativas reales, cuando existen acuerdos con el propio Distrito y es posible un manejo ambiental adecuado de su actividad.</p>
+    </div>
+  </section>
+
+  <section class="wrap" id="compartir" aria-labelledby="h-comp">
+    <p class="eyebrow">Tú puedes ayudar</p>
+    <h2 id="h-comp">Compártelo ahora</h2>
+    <p>Cada mensaje cuenta. Envía este sitio a tus grupos y pide a la CAR, al IDRD y a la Alcaldía de Bogotá una salida concertada.</p>
+    <div class="share-grid">
+      <a class="btn s-wa js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn s-x" id="share-x" href="#" target="_blank" rel="noopener">X / Twitter</a>
+      <a class="btn s-fb" id="share-fb" href="#" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn s-tg" id="share-tg" href="#" target="_blank" rel="noopener">Telegram</a>
+      <button class="btn s-copy js-copy-link" type="button">Copiar enlace</button>
+    </div>
+    <div class="msgbox">
+      <label for="msg" class="eyebrow" style="display:block">Mensaje listo para pegar</label>
+      <textarea id="msg" readonly></textarea>
+      <button class="btn" type="button" id="copy-msg">Copiar mensaje</button>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="qr-card">
+      <div id="qr" aria-label="Código QR de este sitio"></div>
+      <p><b>Muéstralo en persona.</b> Quien escanee este código llega directo a esta página.</p>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="h-videos">
+    <p class="eyebrow">Mira y replica</p>
+    <h2 id="h-videos">Videos y publicaciones</h2>
+    <div class="vids">
+      <a class="vid" href="https://www.instagram.com/reel/DeXll1rJfYI/" target="_blank" rel="noopener">
+        <span class="thumb" style="background-image:url(img/planton-1ago.webp)"><i aria-hidden="true">▶</i></span>
+        <span class="vmeta"><b>La situación de los vendedores del sendero</b><small>Video · Instagram</small></span>
+      </a>
+      <a class="vid" href="https://www.facebook.com/reel/1569684111148804" target="_blank" rel="noopener">
+        <span class="thumb" style="background-image:url(img/dialogo-policia-11oct.webp)"><i aria-hidden="true">▶</i></span>
+        <span class="vmeta"><b>Constancia en la Comisión Primera de la Cámara</b><small>Video · Facebook</small></span>
+      </a>
+    </div>
+    <p style="margin-top:14px;font-size:15px;color:var(--muted)">La intervención también está en:</p>
+    <ul class="links">
+      <li><a href="https://x.com/BecerraGabo/status/2110394893889638677" target="_blank" rel="noopener"><span>X<small>@BecerraGabo</small></span></a></li>
+      <li><a href="https://www.instagram.com/p/Deeuir_xs_p/" target="_blank" rel="noopener"><span>Instagram<small>Publicación con video</small></span></a></li>
+    </ul>
+  </section>
+
+  <section class="wrap convoca" aria-labelledby="h-convoca">
+    <p class="eyebrow" id="h-convoca">Convocan e invitan a apoyar este proceso</p>
+    <p class="org">Asociación de Pobladores Candelaria Vida Mía</p>
+    <p>Junto a la Coordinadora de Procesos y Barrios Populares del Borde Oriental de Bogotá, acompañamos a las familias del sendero en las mesas con la CAR, el IDRD y las entidades distritales, buscando una salida concertada.</p>
+    <p class="eyebrow" style="margin-top:26px">Quiénes acompañan · síguelos</p>
+    <ul class="allies" id="allies"></ul>
+  </section>
+</main>
+
+<footer class="wrap">Información de la comunidad del sendero a Monserrate · Actualizado: 15 de octubre de 2026.</footer>
+
+<div class="sticky" aria-label="Compartir">
+  <a class="btn s-wa js-wa" href="#" target="_blank" rel="noopener" style="border-radius:999px;min-height:46px;font-size:15px">Compartir por WhatsApp</a>
+  <button class="btn s-copy js-copy-link" type="button" style="border-radius:999px">Copiar enlace</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* =====================================================================
+   CONFIGURACIÓN — lo único que necesita editar
+   ---------------------------------------------------------------------
+   SITE_URL: dirección pública del sitio. El QR y los botones de compartir
+   usan esta dirección. Si la deja vacía ("") se usa sola la dirección
+   donde esté publicada la página (en GitHub Pages funciona así).
+
+   ALIADOS: pegue entre las comillas el enlace completo de cada red
+   (por ejemplo "https://www.instagram.com/usuario/"). Las que queden
+   vacías no se muestran. Para el logo, suba la imagen a img/logos/ con
+   el nombre indicado; si no existe, se muestran las iniciales.
+   ===================================================================== */
+const SITE_URL = "";
+
+const ALIADOS = [
+  { nombre: "Asociación de Pobladores Candelaria Vida Mía", rol: "Convoca", iniciales: "CVM",
+    logo: "img/logos/candelaria-vida-mia.png",
+    redes: { Instagram: "https://www.instagram.com/asociacioncandelariavidamia/", Facebook: "https://www.facebook.com/profile.php?id=100094090867013", X: "", TikTok: "", Web: "" } },
+  { nombre: "Coordinadora de Procesos y Barrios Populares del Borde Oriental de Bogotá", rol: "Acompaña", iniciales: "BO",
+    logo: "img/logos/coordinadora-borde-oriental.png",
+    redes: { Instagram: "https://www.instagram.com/cerros_orientalesbta/", Facebook: "https://www.facebook.com/profile.php?id=61573108137094", X: "", TikTok: "", Web: "" } },
+  { nombre: "Gabriel Becerra", rol: "Representante a la Cámara por Bogotá · Pacto Histórico", iniciales: "GB",
+    logo: "img/logos/gabriel-becerra.png",
+    redes: { Instagram: "https://www.instagram.com/becerra_gabo/", Facebook: "https://www.facebook.com/BecerraGabo", X: "https://x.com/BecerraGabo", TikTok: "", Web: "https://gabobecerra.com" } },
+  { nombre: "Heidy Sánchez Barreto", rol: "Concejala de Bogotá · Unión Patriótica – Pacto Histórico", iniciales: "HS",
+    logo: "img/logos/heidy-barreto.png",
+    redes: { Instagram: "https://www.instagram.com/heidy_up/", Facebook: "https://www.facebook.com/Heidy.SanchezUP", X: "https://x.com/heidy_up", TikTok: "", Web: "" } },
+];
+/* ============================ FIN CONFIGURACIÓN ============================ */
+
+const url = SITE_URL || location.href.split("#")[0];
+
+const alliesEl = document.getElementById("allies");
+ALIADOS.forEach(a => {
+  const li = document.createElement("li"); li.className = "ally";
+  const logo = document.createElement("span"); logo.className = "logo"; logo.textContent = a.iniciales;
+  if (a.logo) {
+    const img = new Image(); img.alt = "Logo de " + a.nombre;
+    img.onload = () => { logo.textContent = ""; logo.appendChild(img); };
+    img.src = a.logo;
+  }
+  const info = document.createElement("div");
+  info.innerHTML = "<b></b><small></small><div class='nets'></div>";
+  info.querySelector("b").textContent = a.nombre;
+  info.querySelector("small").textContent = a.rol;
+  const nets = info.querySelector(".nets");
+  Object.entries(a.redes).forEach(([red, href]) => {
+    if (!href) return;
+    const l = document.createElement("a"); l.href = href; l.target = "_blank"; l.rel = "noopener"; l.textContent = red;
+    nets.appendChild(l);
+  });
+  if (!nets.children.length) nets.remove();
+  li.append(logo, info); alliesEl.appendChild(li);
+});
+
+const shortText = "🚨 Más de 70 familias del sendero a Monserrate llevan más de 2 meses sin poder trabajar tras el sellamiento de 33 locales. La protección ambiental no puede hacerse a costa de la dignidad de las familias trabajadoras. Conoce el caso y comparte:";
+const longText = [
+  "🚨 ¡Alerta por los vendedores del sendero a Monserrate!",
+  "",
+  "Desde finales de julio, 33 establecimientos fueron sellados y más de 70 familias, muchas con décadas en el sendero, quedaron sin su sustento.",
+  "",
+  "Existe una conciliación de 2002 con el Distrito que permitía seguir trabajando. Las familias piden a la CAR, al IDRD y a la Alcaldía de Bogotá una salida concertada que proteja los Cerros Orientales sin dejarlas sin trabajo.",
+  "",
+  "Conoce el caso en 2 minutos y compártelo 👇",
+  url
+].join("\n");
+
+const enc = encodeURIComponent;
+document.querySelectorAll(".js-wa").forEach(a => a.href = "https://wa.me/?text=" + enc(longText));
+document.getElementById("share-x").href = "https://twitter.com/intent/tweet?text=" + enc(shortText) + "&url=" + enc(url);
+document.getElementById("share-fb").href = "https://www.facebook.com/sharer/sharer.php?u=" + enc(url);
+document.getElementById("share-tg").href = "https://t.me/share/url?url=" + enc(url) + "&text=" + enc(shortText);
+const msg = document.getElementById("msg");
+msg.value = longText;
+
+const toast = document.getElementById("toast");
+function say(t) { toast.textContent = t; clearTimeout(say.t); say.t = setTimeout(() => toast.textContent = "", 3000); }
+async function copy(text, done, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); say(done); }
+  catch (e) {
+    if (fallbackEl) { fallbackEl.removeAttribute("readonly"); fallbackEl.focus(); fallbackEl.select(); fallbackEl.setAttribute("readonly", ""); say("Selecciona y copia el texto resaltado."); }
+    else { msg.value = url; msg.focus(); msg.select(); say("Copia el enlace resaltado."); }
+  }
+}
+document.querySelectorAll(".js-copy-link").forEach(b => b.addEventListener("click", () => {
+  copy(url, "Enlace copiado.");
+  if (b.closest(".sticky")) { b.textContent = "¡Copiado!"; setTimeout(() => b.textContent = "Copiar enlace", 2000); }
+}));
+document.getElementById("copy-msg").addEventListener("click", () => copy(longText, "Mensaje copiado. Pégalo en tus grupos.", msg));
+
+try { new QRCode(document.getElementById("qr"), { text: url, width: 264, height: 264, colorDark: "#1d221c", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M }); }
+catch (e) { document.querySelector(".qr-card").hidden = true; }
+</script>
+
+</body>
+</html>
